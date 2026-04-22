@@ -1,274 +1,96 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simon Barrière | CV</title>
   <meta name="description" content="CV en ligne de Simon Barrière" />
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-soft: #121a2f;
-      --panel: rgba(15, 23, 42, 0.78);
-      --panel-strong: rgba(17, 24, 39, 0.92);
-      --panel-light: rgba(255, 255, 255, 0.04);
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-light: #1f2937;
       --text: #f8fafc;
-      --muted: #9fb0c8;
-      --muted-2: #cbd5e1;
-      --accent: #8fb8ff;
-      --accent-strong: #c5d8ff;
-      --line: rgba(255, 255, 255, 0.08);
-      --line-strong: rgba(255, 255, 255, 0.14);
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
-      --radius-md: 16px;
-      --max: 1180px;
+      --muted: #cbd5e1;
+      --accent: #60a5fa;
+      --border: rgba(255,255,255,0.08);
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
       color: var(--text);
-      line-height: 1.65;
-      background:
-        radial-gradient(circle at top left, rgba(123, 161, 255, 0.16), transparent 28%),
-        radial-gradient(circle at top right, rgba(82, 130, 255, 0.12), transparent 24%),
-        linear-gradient(180deg, #07101f 0%, #0b1020 45%, #0f172a 100%);
-      min-height: 100vh;
-      letter-spacing: 0.01em;
+      line-height: 1.6;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 36px 36px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.45), transparent 75%);
-      z-index: 0;
-    }
-
-    a {
-      color: var(--accent-strong);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container,
-    .tabs-inner {
-      width: min(var(--max), calc(100% - 32px));
+    .container {
+      width: min(1100px, calc(100% - 32px));
       margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-      color: var(--muted-2);
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      backdrop-filter: blur(10px);
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #d8e7ff, #7fb0ff);
-      box-shadow: 0 0 18px rgba(143, 184, 255, 0.6);
     }
 
     header {
-      padding: 34px 0 20px;
+      padding: 40px 0 24px;
     }
 
     .hero {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
-        linear-gradient(180deg, rgba(10,16,32,0.92), rgba(14,22,40,0.96));
-      box-shadow: var(--shadow);
-      padding: 34px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: auto -10% -35% auto;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(120, 166, 255, 0.18), transparent 65%);
-      filter: blur(20px);
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 360px 1fr;
-      gap: 34px;
-      align-items: stretch;
-    }
-
-    .hero-photo {
-      position: relative;
-      min-height: 100%;
-      border-radius: 24px;
-      overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03)),
-        rgba(255,255,255,0.04);
-      border: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      aspect-ratio: 4 / 5;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
-    }
-
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-photo-placeholder {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 20px;
       padding: 28px;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    .hero-photo-placeholder strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--text);
-      font-size: 1rem;
-    }
-
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 0;
     }
 
     h1 {
-      margin: 16px 0 12px;
-      font-size: clamp(2.6rem, 5vw, 4.6rem);
-      line-height: 0.96;
-      letter-spacing: -0.045em;
+      margin: 0 0 8px;
+      font-size: 2.8rem;
     }
 
     .subtitle {
       margin: 0;
-      font-size: 1.15rem;
-      color: var(--accent-strong);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .lead {
-      margin: 18px 0 0;
-      max-width: 760px;
-      color: var(--muted-2);
-      font-size: 1.04rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.05);
-      color: var(--muted-2);
-      font-size: 0.92rem;
+      color: var(--muted);
+      font-size: 1.1rem;
     }
 
     .summary-boxes {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 28px;
+      gap: 12px;
+      margin-top: 20px;
     }
 
     .summary-box {
-      padding: 18px;
-      border-radius: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
-      border: 1px solid var(--line);
-      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
     }
 
     .summary-box strong {
       display: block;
-      margin-bottom: 8px;
-      font-size: 1.18rem;
-      line-height: 1.15;
-      color: var(--text);
-    }
-
-    .summary-box span {
-      color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
     }
 
     .tabs {
       position: sticky;
       top: 0;
-      z-index: 20;
-      margin: 8px 0 28px;
-      backdrop-filter: blur(14px);
-      background: rgba(7, 16, 31, 0.72);
-      border-top: 1px solid rgba(255,255,255,0.05);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      z-index: 10;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 22px;
     }
 
     .tabs-inner {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
       display: flex;
       gap: 10px;
       overflow-x: auto;
       padding: 14px 0;
-      scrollbar-width: none;
     }
 
     .tabs-inner::-webkit-scrollbar {
@@ -277,103 +99,70 @@
 
     .tab-btn {
       white-space: nowrap;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.045);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
       color: var(--text);
-      padding: 11px 16px;
+      padding: 10px 14px;
       border-radius: 999px;
       cursor: pointer;
-      font-size: 0.94rem;
-      font-weight: 600;
-      transition: 0.25s ease;
-    }
-
-    .tab-btn:hover {
-      transform: translateY(-1px);
-      border-color: rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.08);
+      font-size: 0.95rem;
     }
 
     .tab-btn.active {
-      background: linear-gradient(135deg, rgba(143,184,255,0.20), rgba(197,216,255,0.10));
-      border-color: rgba(143,184,255,0.34);
-      box-shadow: 0 10px 24px rgba(56, 101, 190, 0.16);
-    }
-
-    main {
-      position: relative;
-      z-index: 1;
-      padding-bottom: 24px;
+      background: rgba(96,165,250,0.2);
+      border-color: rgba(96,165,250,0.4);
     }
 
     .panel {
       display: none;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
     }
 
     .panel.active {
       display: block;
-      animation: fadeIn 0.35s ease;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 16px;
-    }
-
-    .section-heading h2 {
-      margin: 0;
-      font-size: clamp(1.7rem, 2.2vw, 2.2rem);
-      letter-spacing: -0.035em;
-    }
-
-    .section-heading p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 560px;
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      padding: 28px;
-      box-shadow: 0 10px 34px rgba(0,0,0,0.18);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
       margin-bottom: 18px;
     }
 
     h2 {
       margin-top: 0;
-      font-size: 1.9rem;
-      letter-spacing: -0.03em;
+      font-size: 1.8rem;
     }
 
     h3 {
-      margin: 0 0 10px;
-      font-size: 1.14rem;
-      letter-spacing: -0.02em;
-    }
-
-    p {
-      margin: 0 0 14px;
+      margin-bottom: 8px;
     }
 
     .muted {
       color: var(--muted);
+    }
+
+    .job {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .job .date {
+      color: #93c5fd;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    ul {
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 8px;
     }
 
     .two-col {
@@ -384,221 +173,61 @@
 
     .contact-list p,
     .contact-list li {
-      margin: 10px 0;
-      color: var(--muted-2);
+      margin: 8px 0;
     }
 
-    .contact-list strong {
-      color: var(--text);
-      min-width: 124px;
-      display: inline-block;
+    a {
+      color: #93c5fd;
+      text-decoration: none;
     }
 
-    .job {
-      position: relative;
-      padding: 22px 22px 20px 26px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
-      border: 1px solid var(--line);
-      margin-bottom: 16px;
-      overflow: hidden;
-    }
-
-    .job::before {
-      content: "";
-      position: absolute;
-      top: 18px;
-      left: 0;
-      bottom: 18px;
-      width: 4px;
-      border-radius: 0 10px 10px 0;
-      background: linear-gradient(180deg, #d6e4ff, #75a7ff);
-      opacity: 0.9;
-    }
-
-    .date {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(143,184,255,0.12);
-      border: 1px solid rgba(143,184,255,0.2);
-      color: #bcd4ff;
-      font-weight: 700;
-      font-size: 0.83rem;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin: 14px 0 0;
-    }
-
-    li {
-      margin-bottom: 8px;
-      color: var(--muted-2);
-    }
-
-    .profile-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 18px;
-    }
-
-    .highlight-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .highlight-item {
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .highlight-item strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 1rem;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .tag {
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-      color: var(--muted-2);
-      font-size: 0.9rem;
-    }
-
-    .timeline-note {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 0.92rem;
+    a:hover {
+      text-decoration: underline;
     }
 
     footer {
-      position: relative;
-      z-index: 1;
       text-align: center;
       color: var(--muted);
-      padding: 8px 0 40px;
-      font-size: 0.95rem;
+      padding: 10px 0 40px;
     }
 
-    @media (max-width: 1080px) {
-      .hero-grid,
-      .profile-grid,
+    @media (max-width: 900px) {
       .summary-boxes,
       .two-col {
         grid-template-columns: 1fr;
       }
 
-      .hero-photo {
-        max-width: 420px;
-      }
-    }
-
-    @media (max-width: 760px) {
-      header {
-        padding-top: 20px;
-      }
-
-      .hero {
-        padding: 22px;
-        border-radius: 24px;
-      }
-
-      .card {
-        padding: 22px;
-        border-radius: 22px;
-      }
-
-      .job {
-        padding: 20px 18px 18px 22px;
-      }
-
-      .summary-box {
-        padding: 16px;
-      }
-
       h1 {
-        font-size: clamp(2.3rem, 10vw, 3.2rem);
-      }
-
-      .subtitle,
-      .lead {
-        font-size: 1rem;
-      }
-
-      .contact-list strong {
-        display: block;
-        margin-bottom: 3px;
+        font-size: 2.1rem;
       }
     }
   </style>
 </head>
 <body>
   <header class="container">
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-photo">
-          <!-- Remplacez la source ci-dessous par votre photo -->
-          <!-- Exemple : <img src="photo-simon.jpg" alt="Portrait de Simon Barrière" /> -->
-          <div class="hero-photo-placeholder">
-            <strong>Emplacement photo premium</strong>
-            <span>Ajoutez ici votre portrait professionnel pour l’afficher en haut de la première page.</span>
-          </div>
+    <div class="hero">
+      <h1>Simon Barrière</h1>
+      <p class="subtitle">Mechanical Fabrication Engineer at CERN</p>
+
+      <div class="summary-boxes">
+        <div class="summary-box">
+          <strong>9+ years</strong>
+          <span class="muted">of experience</span>
         </div>
-
-        <div class="hero-copy">
-          <span class="eyebrow">Curriculum Vitae · Engineering & Manufacturing</span>
-          <h1>Simon Barrière</h1>
-          <p class="subtitle">Mechanical Fabrication Engineer at CERN</p>
-          <p class="lead">
-            Ingénieur en fabrication mécanique spécialisé en production de haute précision,
-            sous-traitance stratégique, coordination industrielle et technologies accélérateurs,
-            avec une forte expertise en environnements SRF, cryogéniques et ultra-propres.
-          </p>
-
-          <div class="hero-actions">
-            <span class="chip">CERN Engineering Department</span>
-            <span class="chip">9+ ans d’expérience</span>
-            <span class="chip">SRF · Precision Manufacturing · Project Leadership</span>
-          </div>
-
-          <div class="summary-boxes">
-            <div class="summary-box">
-              <strong>9+ years</strong>
-              <span>of engineering experience</span>
-            </div>
-            <div class="summary-box">
-              <strong>180+ fabrication projects</strong>
-              <span>prepared and launched into production</span>
-            </div>
-            <div class="summary-box">
-              <strong>330+ contracts</strong>
-              <span>industrial subcontracting follow-up</span>
-            </div>
-            <div class="summary-box">
-              <strong>SRF / Precision Manufacturing</strong>
-              <span>core technical expertise</span>
-            </div>
-          </div>
+        <div class="summary-box">
+          <strong>180+ fabrication projects</strong>
+          <span class="muted">launched in production</span>
+        </div>
+        <div class="summary-box">
+          <strong>330+ contracts</strong>
+          <span class="muted">subcontracting follow-up</span>
+        </div>
+        <div class="summary-box">
+          <strong>SRF / Precision Manufacturing</strong>
+          <span class="muted">core expertise</span>
         </div>
       </div>
-    </section>
+    </div>
   </header>
 
   <nav class="tabs">
@@ -606,7 +235,7 @@
       <button class="tab-btn active" data-tab="home">Accueil</button>
       <button class="tab-btn" data-tab="contact">Contact</button>
       <button class="tab-btn" data-tab="experience">Expérience</button>
-      <button class="tab-btn" data-tab="education">Formation</button>
+      <button class="tab-btn" data-tab="education">Formation académique</button>
       <button class="tab-btn" data-tab="skills">Compétences</button>
       <button class="tab-btn" data-tab="talks">Talks</button>
       <button class="tab-btn" data-tab="publications">Publications</button>
@@ -617,84 +246,50 @@
 
   <main class="container">
     <section class="panel active" id="home">
-      <div class="section-heading">
-        <h2>Profil exécutif</h2>
-        <p>Une présentation plus premium, orientée impact, leadership technique et crédibilité industrielle.</p>
-      </div>
-
-      <div class="profile-grid">
-        <div class="card">
-          <p>
-            Mechanical Fabrication Engineer with extensive experience in precision manufacturing,
-            subcontracting strategy, assembly supervision, supplier coordination and production follow-up
-            for advanced accelerator technologies.
-          </p>
-          <p>
-            Within the CERN Engineering Department, I manage precision mechanical fabrication and assembly
-            projects linked to major programs such as HL-LHC WP4 and LHC Long Shutdown 3. My responsibilities
-            include technical coordination, industrial follow-up, fabrication development and supervision of
-            manufacturing activities for superconducting RF cavities and HOM couplers.
-          </p>
-          <p>
-            My background combines mechanical engineering, innovation management and hands-on experience with
-            high-precision machining, sheet metal forming, brazing, welding, cryogenic systems, cleanroom
-            procedures and project management in international, high-performance environments.
-          </p>
-
-          <div class="tags">
-            <span class="tag">Precision machining</span>
-            <span class="tag">Subcontracting strategy</span>
-            <span class="tag">SRF cavities</span>
-            <span class="tag">Cryogenic systems</span>
-            <span class="tag">Industrial coordination</span>
-            <span class="tag">Cleanroom procedures</span>
-          </div>
-        </div>
-
-        <div class="highlight-list">
-          <div class="highlight-item">
-            <strong>Leadership technique</strong>
-            Coordination d’équipes, de fournisseurs et d’activités de production complexes en environnement international.
-          </div>
-          <div class="highlight-item">
-            <strong>Excellence industrielle</strong>
-            Fabrication de composants critiques à haute précision pour accélérateurs et systèmes SRF.
-          </div>
-          <div class="highlight-item">
-            <strong>Vision projet</strong>
-            Gestion du make-or-buy, pilotage des contrats, suivi qualité, logistique et délais.
-          </div>
-        </div>
+      <div class="card">
+        <h2>Profil</h2>
+        <p>
+          Mechanical Fabrication Engineer with strong experience in precision manufacturing,
+          subcontracting strategy, assembly supervision, supplier coordination and production
+          follow-up for advanced accelerator technologies.
+        </p>
+        <p>
+          I currently work within the CERN Engineering Department, where I manage precision
+          mechanical fabrication and assembly projects linked to major programs such as
+          HL-LHC WP4 and LHC Long Shutdown 3. My work includes technical coordination,
+          supervision of manufacturing activities, industrial follow-up and fabrication process
+          development for superconducting RF cavities and HOM couplers.
+        </p>
+        <p>
+          My background combines mechanical engineering, innovation management and hands-on
+          experience with high-precision machining, sheet metal forming, brazing, welding,
+          cryogenic systems, cleanroom procedures and project management in international environments.
+        </p>
       </div>
     </section>
 
     <section class="panel" id="contact">
-      <div class="section-heading">
-        <h2>Coordonnées</h2>
-        <p>Présentation claire, plus élégante, séparant l’identité personnelle du cadre institutionnel.</p>
-      </div>
-
       <div class="two-col">
         <div class="card">
-          <h3>Contact personnel</h3>
+          <h2>Contact personnel</h2>
           <div class="contact-list">
             <p><strong>Date of birth:</strong> April 28th, 1994</p>
             <p><strong>Place of birth:</strong> Villeneuve-sur-Lot, France</p>
             <p><strong>Nationality:</strong> French</p>
-            <p><strong>Mobile:</strong> <a href="tel:+33633195907">+33 6 33 19 59 07</a></p>
+            <p><strong>Mobile:</strong> +33 6 33 19 59 07</p>
             <p><strong>Personal e-mail:</strong> <a href="mailto:simon.barriere@gmail.com">simon.barriere@gmail.com</a></p>
             <p><strong>Domicile:</strong> Saint-Genis-Pouilly, Ain, France</p>
           </div>
         </div>
 
         <div class="card">
-          <h3>Contact professionnel</h3>
+          <h2>Contact professionnel</h2>
           <div class="contact-list">
             <p><strong>Institution:</strong> CERN – Engineering Department</p>
             <p><strong>Address:</strong> CH-1211 Geneva 23, Switzerland</p>
             <p><strong>Office:</strong> 72/R-050 – J18200</p>
-            <p><strong>Phone:</strong> <a href="tel:+41227665330">+41 22 76 65330</a></p>
-            <p><strong>Mobile:</strong> <a href="tel:+41754118508">+41 75 411 8508</a></p>
+            <p><strong>Phone:</strong> +41 22 76 65330</p>
+            <p><strong>Mobile:</strong> +41 75 411 8508</p>
             <p><strong>E-mail:</strong> <a href="mailto:simon.barriere@cern.ch">simon.barriere@cern.ch</a></p>
           </div>
         </div>
@@ -702,28 +297,26 @@
     </section>
 
     <section class="panel" id="experience">
-      <div class="section-heading">
-        <h2>Expérience professionnelle</h2>
-        <p>Une structure plus premium, plus lisible, qui valorise mieux la progression de carrière et l’impact.</p>
-      </div>
-
       <div class="card">
+        <h2>Expérience professionnelle</h2>
+
         <div class="job">
           <div class="date">June 2023 - Present</div>
           <h3>Mechanical Fabrication Engineer — CERN, Engineering Department, Mechanical & Materials Engineering Group (EN-MME)</h3>
           <p class="muted">Staff Member (STAF)</p>
           <p>
-            Responsible for managing precision mechanical fabrication and assembly projects, ensuring successful
-            execution of production activities and coordination with industry partners for major CERN programs,
-            especially HL-LHC WP4, preparation works for the LHC Long Shutdown 3 and activities with external institutes.
+            Responsible for managing precision mechanical fabrication and assembly projects,
+            ensuring successful execution of production activities and coordination with industry
+            partners for various CERN projects, especially HL-LHC WP4, preparation works for
+            the LHC Long Shutdown 3 and activities with external institutes.
           </p>
           <ul>
             <li>Lead technical teams and supervise assembly, installation and testing of complex mechanical systems.</li>
-            <li>Strong involvement in superconducting radio frequency cavities and higher-order mode couplers production.</li>
+            <li>Strong involvement in superconducting radio frequency cavities and high-order modes couplers production.</li>
             <li>Oversee research and development efforts related to fabrication processes for accelerator technologies.</li>
-            <li>Drive high-precision machining strategies across a wide range of materials and manufacturing constraints.</li>
+            <li>Focus on high-precision machining techniques across a wide range of materials.</li>
           </ul>
-          <p class="timeline-note"><strong>Direct supervisor:</strong> M. Garlaschè, EN-MME-MA Section Leader.</p>
+          <p><strong>Direct supervisor:</strong> M. Garlaschè, EN-MME-MA Section Leader.</p>
         </div>
 
         <div class="job">
@@ -731,8 +324,8 @@
           <h3>Fabrication & Subcontracting Engineer — CERN, Engineering Department, Mechanical & Materials Engineering Group (EN-MME)</h3>
           <p class="muted">External contractor (Sep. 2021 – May 2023) / Junior Fellow (Aug. 2018 – Aug. 2021)</p>
           <p>
-            Within the CERN Central Mechanical Workshop, in charge of internal and external production of mechanical
-            components for all CERN accelerators and experiments, with a strong focus on manufacturability and industrial performance.
+            Within CERN Central Mechanical Workshop, in charge of internal and external production
+            of mechanical components for all CERN accelerators and experiments.
           </p>
           <ul>
             <li>Provided engineering expertise in design for manufacturing and steered make-or-buy strategy.</li>
@@ -741,9 +334,9 @@
             <li>Acted as technical lead for EU-wide subcontracted manufacturing projects below and above 200k CHF.</li>
             <li>Managed 330+ contracts and around 1.3 MCHF over 3 years.</li>
             <li>Represented the CERN EN-MME group at conferences and industry exhibitions.</li>
-            <li>Managed component production and logistics linked to HL-LHC international collaborations.</li>
+            <li>Responsible for component production and logistics linked to HL-LHC international collaborations.</li>
           </ul>
-          <p class="timeline-note"><strong>Direct supervisor:</strong> A. Dallocchio, EN-MME-FS Section Leader.</p>
+          <p><strong>Direct supervisor:</strong> A. Dallocchio, EN-MME-FS Section Leader.</p>
         </div>
 
         <div class="job">
@@ -751,8 +344,9 @@
           <h3>Field Coordinator — CERN, Beams Department, Radio Frequency Group (BE-RF)</h3>
           <p class="muted">Temporary worker (TEMC)</p>
           <p>
-            Following participation in testing and assembly of the HL-LHC crab cavities prototype cryomodule,
-            I joined the coordination team for its final installation in the SPS, the main injector of the LHC.
+            After contributing to the testing and assembly of the HL-LHC crab cavities prototype
+            cryomodule, I joined the coordination team for its final installation in the SPS,
+            the main injector of the LHC.
           </p>
           <ul>
             <li>Coordinated and scheduled technical activities for infrastructure upgrades.</li>
@@ -761,7 +355,7 @@
             <li>Acted as liaison between the testing team and tunnel stakeholders.</li>
             <li>Delivered weekly progress reports at the SPS Accelerator Coordination Committee.</li>
           </ul>
-          <p class="timeline-note"><strong>Direct supervisor:</strong> G. Vandoni, BE-RF-SRF Physicist.</p>
+          <p><strong>Direct supervisor:</strong> G. Vandoni, BE-RF-SRF Physicist.</p>
         </div>
 
         <div class="job">
@@ -769,8 +363,8 @@
           <h3>Mechanical Project Engineer — CERN, Beams Department, Radio Frequency Group (BE-RF)</h3>
           <p class="muted">Temporary worker (TEMC)</p>
           <p>
-            Member of an international and multidisciplinary team working on the preparation and validation of
-            superconducting RF cavities, especially HL-LHC crab cavities for SPS testing.
+            Member of an international and multidisciplinary team working on the preparation and
+            validation of superconducting RF cavities, especially HL-LHC crab cavities for SPS testing.
           </p>
           <ul>
             <li>Developed cleanroom workflows and procedures for assembling superconducting RF cavities in ISO-4 and ISO-5 environments.</li>
@@ -779,18 +373,15 @@
             <li>Steered integration, planning and coordination of services and cabling teams for the HL-LHC cryomodule test bunker setup at SM18.</li>
             <li>Provided technical support throughout the cavity testing program.</li>
           </ul>
-          <p class="timeline-note"><strong>Direct supervisor:</strong> A. Macpherson, BE-RF-SRF Physicist.</p>
+          <p><strong>Direct supervisor:</strong> A. Macpherson, BE-RF-SRF Physicist.</p>
         </div>
       </div>
     </section>
 
     <section class="panel" id="education">
-      <div class="section-heading">
-        <h2>Formation académique</h2>
-        <p>Une présentation plus concise et plus institutionnelle.</p>
-      </div>
-
       <div class="card">
+        <h2>Formation académique</h2>
+
         <div class="job">
           <div class="date">September 2016</div>
           <h3>Advanced Master in Innovation Management</h3>
@@ -808,41 +399,41 @@
     </section>
 
     <section class="panel" id="skills">
-      <div class="section-heading">
-        <h2>Compétences</h2>
-        <p>Une lecture plus claire par grands blocs d’expertise.</p>
-      </div>
-
       <div class="card">
+        <h2>Compétences techniques</h2>
+
         <div class="job">
-          <h3>Precision manufacturing for accelerator technologies</h3>
+          <h3>Precision manufacturing applied to accelerator technologies and components</h3>
           <p>
-            Extensive experience with high-precision CNC multi-axis machining, sheet metal forming and shaping,
-            including bending, stamping, vacuum brazing, TIG/MIG welding, and laser & electron-beam welding,
-            applied to RF, cryogenic and ultra-high vacuum components.
+            Extensive experience with high-precision CNC multi-axis machining, sheet metal forming
+            and shaping processes, including bending, stamping, vacuum brazing, TIG/MIG welding,
+            and laser & electron-beam welding, applied to RF, cryogenic and ultra-high vacuum components.
           </p>
         </div>
 
         <div class="job">
           <h3>Project & subcontracting management</h3>
           <p>
-            Strong experience in subcontracted manufacturing projects, drafting technical specifications, supplier visits,
-            capability assessment, quality follow-up, on-time delivery control and logistics management for international collaborations.
+            Extensive experience in managing subcontracted manufacturing projects, drafting technical
+            specifications, visiting suppliers to assess capabilities and quality systems, and ensuring
+            timely delivery and conformity to requirements. Strong experience in logistics management
+            for large-scale international collaborations.
           </p>
         </div>
 
         <div class="job">
-          <h3>Superconducting RF devices & cryogenic systems</h3>
+          <h3>Superconducting RF devices & related cryogenics systems</h3>
           <p>
-            Experience with ISO-4 and ISO-5 cleanroom workflows for superconducting RF cavity assembly,
-            contamination-free integration procedures, SRF cavity fabrication management and infrastructure coordination for testing at 2K.
+            Experience with ISO-4 and ISO-5 cleanroom workflows for the assembly of superconducting RF cavities,
+            contamination-free assembly and integration procedures, SRF cavity fabrication management and
+            coordination of infrastructure upgrades for testing at 2K.
           </p>
         </div>
 
         <div class="job">
-          <h3>Digital & engineering tools</h3>
+          <h3>Computers and informatics</h3>
           <ul>
-            <li>2D & 3D CAD</li>
+            <li>2D & 3D Computer Aided Design (CAD)</li>
             <li>Advanced level with CATIA V5</li>
             <li>Advanced level with Creo Parametric</li>
             <li>Advanced level with Microsoft Office: PowerPoint, Word, Excel</li>
@@ -850,7 +441,7 @@
         </div>
 
         <div class="job">
-          <h3>Additional capabilities</h3>
+          <h3>Additional skills</h3>
           <ul>
             <li>Coordination of multidisciplinary teams & contractors</li>
             <li>Safety procedures & risk management in accelerator environments</li>
@@ -861,12 +452,8 @@
     </section>
 
     <section class="panel" id="talks">
-      <div class="section-heading">
-        <h2>Talks</h2>
-        <p>Historique des prises de parole et représentations techniques.</p>
-      </div>
-
       <div class="card">
+        <h2>Talks</h2>
         <ul>
           <li>Meet-the-Buyer Event (Birmingham, UK, 2019): “Mechanical Activities in the EN-MME Workshop and Subcontracting”.</li>
           <li>4th CERN SRF Workshop (CERN, Geneva, 2019): “SRF Crab Cavities: Recent Developments in Fabrication Techniques”.</li>
@@ -885,14 +472,9 @@
     </section>
 
     <section class="panel" id="publications">
-      <div class="section-heading">
-        <h2>Publications</h2>
-        <p>Distinction plus nette entre auteur principal et co-auteur.</p>
-      </div>
-
       <div class="two-col">
         <div class="card">
-          <h3>Main author</h3>
+          <h2>Publications — Main author</h2>
           <ul>
             <li>“HOM Couplers and RF Antennas for HL-LHC Crab Cavities: Developments for Manufacturing”; S. Barriere et al., Contribution to the 20th International Conference on RF Superconductivity (SRF 2021).</li>
             <li>“Crab Cavities for HL-LHC”, S. Barriere et al., Contribution to the Engineering Department Workshop (2022).</li>
@@ -900,7 +482,7 @@
         </div>
 
         <div class="card">
-          <h3>Co-author</h3>
+          <h2>Publications — Co-author</h2>
           <ul>
             <li>“Quench localisation in SRF cavity tests with transition edge sensors”; H. Furci et al., ICEC-ICMC 2018.</li>
             <li>“Assessment of the Mechanical Properties of Ultra-High Purity Niobium After Cold Work and Heat Treatment With the HL-LHC Crab Cavities as Benchmark”; A. Gallifa Terricabras et al., SRF 2019.</li>
@@ -916,27 +498,19 @@
     </section>
 
     <section class="panel" id="languages">
-      <div class="section-heading">
-        <h2>Langues</h2>
-        <p>Présentation simple et plus premium visuellement.</p>
-      </div>
-
       <div class="card">
+        <h2>Langues</h2>
         <ul>
           <li><strong>French</strong> — native language</li>
-          <li><strong>English</strong> — fluent, professional working proficiency</li>
-          <li><strong>Spanish</strong> — basic knowledge</li>
+          <li><strong>English</strong> — school education, working experience, fluent</li>
+          <li><strong>Spanish</strong> — school education, private courses, basic knowledge</li>
         </ul>
       </div>
     </section>
 
     <section class="panel" id="interests">
-      <div class="section-heading">
-        <h2>Intérêts</h2>
-        <p>Une section plus élégante, moins brute, mieux intégrée au ton premium du site.</p>
-      </div>
-
       <div class="card">
+        <h2>Intérêts</h2>
         <ul>
           <li><strong>Kitesurfing</strong> — 10 years, multiple travels to Spain, Western Sahara, Mauritius</li>
           <li><strong>Alpine skiing</strong> — 15 years</li>
@@ -949,7 +523,7 @@
   </main>
 
   <footer>
-    Simon Barrière · CV premium web version
+    Simon Barrière
   </footer>
 
   <script>
@@ -965,8 +539,7 @@
         panel.classList.toggle('active', panel.id === tabId);
       });
 
-      history.replaceState(null, '', '#' + tabId);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.replaceState(null, "", "#" + tabId);
     }
 
     buttons.forEach(button => {
