@@ -1,1 +1,557 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simon Barrière | CV</title>
+  <meta name="description" content="CV en ligne de Simon Barrière" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-light: #1f2937;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #60a5fa;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 40px 0 24px;
+    }
+
+    .hero {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2.8rem;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .summary-boxes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .summary-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .summary-box strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .tabs {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 22px;
+    }
+
+    .tabs-inner {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 14px 0;
+    }
+
+    .tabs-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      white-space: nowrap;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .tab-btn.active {
+      background: rgba(96,165,250,0.2);
+      border-color: rgba(96,165,250,0.4);
+    }
+
+    .panel {
+      display: none;
+      margin-bottom: 24px;
+    }
+
+    .panel.active {
+      display: block;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .job {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .job .date {
+      color: #93c5fd;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    ul {
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .contact-list p,
+    .contact-list li {
+      margin: 8px 0;
+    }
+
+    a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 10px 0 40px;
+    }
+
+    @media (max-width: 900px) {
+      .summary-boxes,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="hero">
+      <h1>Simon Barrière</h1>
+      <p class="subtitle">Mechanical Fabrication Engineer at CERN</p>
+
+      <div class="summary-boxes">
+        <div class="summary-box">
+          <strong>9+ years</strong>
+          <span class="muted">of experience</span>
+        </div>
+        <div class="summary-box">
+          <strong>180+ fabrication projects</strong>
+          <span class="muted">launched in production</span>
+        </div>
+        <div class="summary-box">
+          <strong>330+ contracts</strong>
+          <span class="muted">subcontracting follow-up</span>
+        </div>
+        <div class="summary-box">
+          <strong>SRF / Precision Manufacturing</strong>
+          <span class="muted">core expertise</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <div class="tabs-inner">
+      <button class="tab-btn active" data-tab="home">Accueil</button>
+      <button class="tab-btn" data-tab="contact">Contact</button>
+      <button class="tab-btn" data-tab="experience">Expérience</button>
+      <button class="tab-btn" data-tab="education">Formation académique</button>
+      <button class="tab-btn" data-tab="skills">Compétences</button>
+      <button class="tab-btn" data-tab="talks">Talks</button>
+      <button class="tab-btn" data-tab="publications">Publications</button>
+      <button class="tab-btn" data-tab="languages">Langues</button>
+      <button class="tab-btn" data-tab="interests">Intérêts</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="panel active" id="home">
+      <div class="card">
+        <h2>Profil</h2>
+        <p>
+          Mechanical Fabrication Engineer with strong experience in precision manufacturing,
+          subcontracting strategy, assembly supervision, supplier coordination and production
+          follow-up for advanced accelerator technologies.
+        </p>
+        <p>
+          I currently work within the CERN Engineering Department, where I manage precision
+          mechanical fabrication and assembly projects linked to major programs such as
+          HL-LHC WP4 and LHC Long Shutdown 3. My work includes technical coordination,
+          supervision of manufacturing activities, industrial follow-up and fabrication process
+          development for superconducting RF cavities and HOM couplers.
+        </p>
+        <p>
+          My background combines mechanical engineering, innovation management and hands-on
+          experience with high-precision machining, sheet metal forming, brazing, welding,
+          cryogenic systems, cleanroom procedures and project management in international environments.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel" id="contact">
+      <div class="two-col">
+        <div class="card">
+          <h2>Contact personnel</h2>
+          <div class="contact-list">
+            <p><strong>Date of birth:</strong> April 28th, 1994</p>
+            <p><strong>Place of birth:</strong> Villeneuve-sur-Lot, France</p>
+            <p><strong>Nationality:</strong> French</p>
+            <p><strong>Mobile:</strong> +33 6 33 19 59 07</p>
+            <p><strong>Personal e-mail:</strong> <a href="mailto:simon.barriere@gmail.com">simon.barriere@gmail.com</a></p>
+            <p><strong>Domicile:</strong> Saint-Genis-Pouilly, Ain, France</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Contact professionnel</h2>
+          <div class="contact-list">
+            <p><strong>Institution:</strong> CERN – Engineering Department</p>
+            <p><strong>Address:</strong> CH-1211 Geneva 23, Switzerland</p>
+            <p><strong>Office:</strong> 72/R-050 – J18200</p>
+            <p><strong>Phone:</strong> +41 22 76 65330</p>
+            <p><strong>Mobile:</strong> +41 75 411 8508</p>
+            <p><strong>E-mail:</strong> <a href="mailto:simon.barriere@cern.ch">simon.barriere@cern.ch</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="experience">
+      <div class="card">
+        <h2>Expérience professionnelle</h2>
+
+        <div class="job">
+          <div class="date">June 2023 - Present</div>
+          <h3>Mechanical Fabrication Engineer — CERN, Engineering Department, Mechanical & Materials Engineering Group (EN-MME)</h3>
+          <p class="muted">Staff Member (STAF)</p>
+          <p>
+            Responsible for managing precision mechanical fabrication and assembly projects,
+            ensuring successful execution of production activities and coordination with industry
+            partners for various CERN projects, especially HL-LHC WP4, preparation works for
+            the LHC Long Shutdown 3 and activities with external institutes.
+          </p>
+          <ul>
+            <li>Lead technical teams and supervise assembly, installation and testing of complex mechanical systems.</li>
+            <li>Strong involvement in superconducting radio frequency cavities and high-order modes couplers production.</li>
+            <li>Oversee research and development efforts related to fabrication processes for accelerator technologies.</li>
+            <li>Focus on high-precision machining techniques across a wide range of materials.</li>
+          </ul>
+          <p><strong>Direct supervisor:</strong> M. Garlaschè, EN-MME-MA Section Leader.</p>
+        </div>
+
+        <div class="job">
+          <div class="date">August 2018 - July 2023</div>
+          <h3>Fabrication & Subcontracting Engineer — CERN, Engineering Department, Mechanical & Materials Engineering Group (EN-MME)</h3>
+          <p class="muted">External contractor (Sep. 2021 – May 2023) / Junior Fellow (Aug. 2018 – Aug. 2021)</p>
+          <p>
+            Within CERN Central Mechanical Workshop, in charge of internal and external production
+            of mechanical components for all CERN accelerators and experiments.
+          </p>
+          <ul>
+            <li>Provided engineering expertise in design for manufacturing and steered make-or-buy strategy.</li>
+            <li>Prepared 180+ projects representing about 5.9 MCHF and 65,000 workshop hours, including 70 as Project Manager (~3.5 MCHF).</li>
+            <li>Handled high-precision CNC machining, sheet metal forming & shaping, vacuum brazing, TIG/MIG, laser and electron-beam welding.</li>
+            <li>Acted as technical lead for EU-wide subcontracted manufacturing projects below and above 200k CHF.</li>
+            <li>Managed 330+ contracts and around 1.3 MCHF over 3 years.</li>
+            <li>Represented the CERN EN-MME group at conferences and industry exhibitions.</li>
+            <li>Responsible for component production and logistics linked to HL-LHC international collaborations.</li>
+          </ul>
+          <p><strong>Direct supervisor:</strong> A. Dallocchio, EN-MME-FS Section Leader.</p>
+        </div>
+
+        <div class="job">
+          <div class="date">January 2018 – July 2018</div>
+          <h3>Field Coordinator — CERN, Beams Department, Radio Frequency Group (BE-RF)</h3>
+          <p class="muted">Temporary worker (TEMC)</p>
+          <p>
+            After contributing to the testing and assembly of the HL-LHC crab cavities prototype
+            cryomodule, I joined the coordination team for its final installation in the SPS,
+            the main injector of the LHC.
+          </p>
+          <ul>
+            <li>Coordinated and scheduled technical activities for infrastructure upgrades.</li>
+            <li>Collaborated with CERN staff and international contractors.</li>
+            <li>Ensured safety compliance for personnel and equipment, reporting to the Engineering Referent for Operational Safety.</li>
+            <li>Acted as liaison between the testing team and tunnel stakeholders.</li>
+            <li>Delivered weekly progress reports at the SPS Accelerator Coordination Committee.</li>
+          </ul>
+          <p><strong>Direct supervisor:</strong> G. Vandoni, BE-RF-SRF Physicist.</p>
+        </div>
+
+        <div class="job">
+          <div class="date">November 2016 - December 2017</div>
+          <h3>Mechanical Project Engineer — CERN, Beams Department, Radio Frequency Group (BE-RF)</h3>
+          <p class="muted">Temporary worker (TEMC)</p>
+          <p>
+            Member of an international and multidisciplinary team working on the preparation and
+            validation of superconducting RF cavities, especially HL-LHC crab cavities for SPS testing.
+          </p>
+          <ul>
+            <li>Developed cleanroom workflows and procedures for assembling superconducting RF cavities in ISO-4 and ISO-5 environments.</li>
+            <li>Led the design and managed manufacturing of mechanical systems for cryogenic tests at 2K using CATIA V5 / SmarTeam.</li>
+            <li>Maintained daily coordination with industrial suppliers.</li>
+            <li>Steered integration, planning and coordination of services and cabling teams for the HL-LHC cryomodule test bunker setup at SM18.</li>
+            <li>Provided technical support throughout the cavity testing program.</li>
+          </ul>
+          <p><strong>Direct supervisor:</strong> A. Macpherson, BE-RF-SRF Physicist.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="education">
+      <div class="card">
+        <h2>Formation académique</h2>
+
+        <div class="job">
+          <div class="date">September 2016</div>
+          <h3>Advanced Master in Innovation Management</h3>
+          <p class="muted">EM Lyon Business School, Écully, France</p>
+          <p><strong>Thesis:</strong> Organizational learning and change management: methods and guidelines.</p>
+        </div>
+
+        <div class="job">
+          <div class="date">September 2015</div>
+          <h3>Master’s Degree in Mechanical Engineering</h3>
+          <p class="muted">ICAM, Toulouse, France</p>
+          <p><strong>Thesis:</strong> Mechanical characterization of TA6V titanium RCC pivots for space applications.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="skills">
+      <div class="card">
+        <h2>Compétences techniques</h2>
+
+        <div class="job">
+          <h3>Precision manufacturing applied to accelerator technologies and components</h3>
+          <p>
+            Extensive experience with high-precision CNC multi-axis machining, sheet metal forming
+            and shaping processes, including bending, stamping, vacuum brazing, TIG/MIG welding,
+            and laser & electron-beam welding, applied to RF, cryogenic and ultra-high vacuum components.
+          </p>
+        </div>
+
+        <div class="job">
+          <h3>Project & subcontracting management</h3>
+          <p>
+            Extensive experience in managing subcontracted manufacturing projects, drafting technical
+            specifications, visiting suppliers to assess capabilities and quality systems, and ensuring
+            timely delivery and conformity to requirements. Strong experience in logistics management
+            for large-scale international collaborations.
+          </p>
+        </div>
+
+        <div class="job">
+          <h3>Superconducting RF devices & related cryogenics systems</h3>
+          <p>
+            Experience with ISO-4 and ISO-5 cleanroom workflows for the assembly of superconducting RF cavities,
+            contamination-free assembly and integration procedures, SRF cavity fabrication management and
+            coordination of infrastructure upgrades for testing at 2K.
+          </p>
+        </div>
+
+        <div class="job">
+          <h3>Computers and informatics</h3>
+          <ul>
+            <li>2D & 3D Computer Aided Design (CAD)</li>
+            <li>Advanced level with CATIA V5</li>
+            <li>Advanced level with Creo Parametric</li>
+            <li>Advanced level with Microsoft Office: PowerPoint, Word, Excel</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h3>Additional skills</h3>
+          <ul>
+            <li>Coordination of multidisciplinary teams & contractors</li>
+            <li>Safety procedures & risk management in accelerator environments</li>
+            <li>Conference presentations & industry representation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="talks">
+      <div class="card">
+        <h2>Talks</h2>
+        <ul>
+          <li>Meet-the-Buyer Event (Birmingham, UK, 2019): “Mechanical Activities in the EN-MME Workshop and Subcontracting”.</li>
+          <li>4th CERN SRF Workshop (CERN, Geneva, 2019): “SRF Crab Cavities: Recent Developments in Fabrication Techniques”.</li>
+          <li>11th HL-LHC Collaboration Meeting (CERN, Geneva, 2021): “Manufacturing of RFD prototypes & DQW series”.</li>
+          <li>5th CERN SRF Workshop (CERN, Geneva, 2022): “HOM Couplers for Crab Cavities: Fabrication Challenges and Experience”.</li>
+          <li>Engineering Department Workshop (CERN, Geneva, 2022): “Crab Cavities for HL-LHC”.</li>
+          <li>6th CERN SRF Workshop (CERN, Geneva, 2023): “HL-LHC Crab Cavities: Series Production of RF Couplers & Cryomodule Assembly Perspectives”.</li>
+          <li>13th HL-LHC Collaboration Meeting (Vancouver, Canada, 2023): “DQW HOM couplers challenges & FPC”.</li>
+          <li>7th CERN SRF Workshop (CERN, Geneva, 2024): “Manufacturing for SRF”.</li>
+          <li>14th HL-LHC Collaboration Meeting (Genoa, Italy, 2024): “RFD-CM Repair overview and highlight”, “DQW & RFD HOM couplers fabrication challenges”.</li>
+          <li>Thematic Industry Day - Precision Machining (CERN, Geneva, 2024): “Fabrication technologies at CERN MME Main Workshop”.</li>
+          <li>TESLA Technology Collaboration Meeting 2025 (IBS/IRIS, Daejeon, Korea, 2025): “Novel fabrication technologies for SRF components”.</li>
+          <li>15th HL-LHC Collaboration Meeting (CERN, Geneva, 2025): “CERN RFD cavity fabrication & HOM status”.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel" id="publications">
+      <div class="two-col">
+        <div class="card">
+          <h2>Publications — Main author</h2>
+          <ul>
+            <li>“HOM Couplers and RF Antennas for HL-LHC Crab Cavities: Developments for Manufacturing”; S. Barriere et al., Contribution to the 20th International Conference on RF Superconductivity (SRF 2021).</li>
+            <li>“Crab Cavities for HL-LHC”, S. Barriere et al., Contribution to the Engineering Department Workshop (2022).</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Publications — Co-author</h2>
+          <ul>
+            <li>“Quench localisation in SRF cavity tests with transition edge sensors”; H. Furci et al., ICEC-ICMC 2018.</li>
+            <li>“Assessment of the Mechanical Properties of Ultra-High Purity Niobium After Cold Work and Heat Treatment With the HL-LHC Crab Cavities as Benchmark”; A. Gallifa Terricabras et al., SRF 2019.</li>
+            <li>“Advanced design of tooling for sheet-metal forming through numerical simulations in the scope of SRF crab cavities at CERN”; A. Amorim Carvalho et al., ESAFORM 2019.</li>
+            <li>“First demonstration of the use of crab cavities on hadron beams”; Rama Calaga et al., Physical Review Accelerators and Beams (2021).</li>
+            <li>“Design and Fabrication of FRESCA2 Cryostat”, Federico Carra et al., Engineering Department Workshop (2022).</li>
+            <li>“Simulations and First RF Measurements of Coaxial HOM Coupler Prototypes for PERLE SRF Cavities”; Carmelo Barbagallo et al., SRF 2023.</li>
+            <li>“Optimizing the Manufacture of High-Purity Niobium SRF Cavities Using the Forming Limit Diagram: A Case Study of the HL-LHC Crab Cavities RFD Pole”; A. Gallifa Terricabras et al., SRF 2023.</li>
+            <li>“First coaxial HOM coupler prototypes and RF measurements on a copper cavity for the PERLE project”; Carmelo Barbagallo et al., IPAC'23.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="languages">
+      <div class="card">
+        <h2>Langues</h2>
+        <ul>
+          <li><strong>French</strong> — native language</li>
+          <li><strong>English</strong> — school education, working experience, fluent</li>
+          <li><strong>Spanish</strong> — school education, private courses, basic knowledge</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel" id="interests">
+      <div class="card">
+        <h2>Intérêts</h2>
+        <ul>
+          <li><strong>Kitesurfing</strong> — 10 years, multiple travels to Spain, Western Sahara, Mauritius</li>
+          <li><strong>Alpine skiing</strong> — 15 years</li>
+          <li><strong>Badminton and squash</strong> — 8 years</li>
+          <li><strong>Space exploration & technology enthusiast</strong></li>
+          <li><strong>Member of the French Physics Society</strong></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Simon Barrière
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.panel');
+
+    function showTab(tabId) {
+      buttons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === tabId);
+      });
+
+      panels.forEach(panel => {
+        panel.classList.toggle('active', panel.id === tabId);
+      });
+
+      history.replaceState(null, "", "#" + tabId);
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => showTab(button.dataset.tab));
+    });
+
+    const hash = window.location.hash.replace('#', '');
+    if (hash && document.getElementById(hash)) {
+      showTab(hash);
+    }
+  </script>
+</body>
+</html>
 
