@@ -1,1 +1,223 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Simon Barrière | CV</title>
+  <meta name="description" content="CV en ligne de Simon Barrière" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-light: #1f2937;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #60a5fa;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header { padding: 40px 0 24px; }
+
+    .hero {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    h1 { margin: 0 0 8px; font-size: 2.8rem; }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .summary-boxes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .summary-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .tabs {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 22px;
+    }
+
+    .tabs-inner {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 14px 0;
+    }
+
+    .tab-btn {
+      white-space: nowrap;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .tab-btn.active {
+      background: rgba(96,165,250,0.2);
+      border-color: rgba(96,165,250,0.4);
+    }
+
+    .panel { display: none; margin-bottom: 24px; }
+    .panel.active { display: block; }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+
+    h2 { margin-top: 0; font-size: 1.8rem; }
+    h3 { margin-bottom: 8px; }
+
+    .muted { color: var(--muted); }
+
+    .job {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .job .date {
+      color: #93c5fd;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    ul { margin-top: 10px; }
+    li { margin-bottom: 8px; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    a { color: #93c5fd; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 10px 0 40px;
+    }
+
+    @media (max-width: 900px) {
+      .summary-boxes, .two-col { grid-template-columns: 1fr; }
+      h1 { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+
+<body>
+<header class="container">
+  <div class="hero">
+    <img src="cache-image.jpg" alt="" width="200">
+    <h1>Simon Barrière</h1>
+    <p class="subtitle">Ingénieur en fabrication mécanique au CERN</p>
+
+    <div class="summary-boxes">
+      <div class="summary-box">
+        <strong>10 ans</strong>
+        <span class="muted">d’expérience</span>
+      </div>
+      <div class="summary-box">
+        <strong>Chef de projet</strong>
+        <span class="muted">projets de fabrication multi-technologies</span>
+      </div>
+      <div class="summary-box">
+        <strong>Gestion de contrats industriels</strong>
+        <span class="muted">suivi de sous-traitance</span>
+      </div>
+      <div class="summary-box">
+        <strong>SRF / fabrication multi-technologies</strong>
+        <span class="muted">expertise principale</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <button class="tab-btn active" data-tab="home">Accueil</button>
+    <button class="tab-btn" data-tab="contact">Contact</button>
+    <button class="tab-btn" data-tab="experience">Expérience</button>
+    <button class="tab-btn" data-tab="portfolio">Portfolio</button>
+    <button class="tab-btn" data-tab="education">Formation</button>
+    <button class="tab-btn" data-tab="skills">Compétences</button>
+    <button class="tab-btn" data-tab="talks">Conférences</button>
+    <button class="tab-btn" data-tab="publications">Publications</button>
+    <button class="tab-btn" data-tab="languages">Langues</button>
+    <button class="tab-btn" data-tab="interests">Centres d’intérêt</button>
+  </div>
+</nav>
+
+<main class="container">
+<section class="panel active" id="home">
+  <div class="card">
+    <h2>Profil</h2>
+    <p>
+      Ingénieur en fabrication mécanique avec une solide expérience en production de précision,
+      stratégie de sous-traitance, supervision d’assemblage, coordination fournisseurs et suivi
+      de production pour des technologies d’accélérateurs avancées.
+    </p>
+    <p>
+      Je travaille actuellement au département d’ingénierie du CERN, où je pilote des projets
+      de fabrication et d’assemblage de haute précision liés à des programmes majeurs tels que
+      le HL-LHC et le Long Shutdown 3 du LHC.
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Simon Barrière. Tous droits réservés.
+</footer>
+
+</body>
+</html>
+```
 
