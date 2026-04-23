@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Bienvenue</title>
+
     <style>
+        :root {
+            --bg: #0f172a;
+            --panel: #111827;
+            --panel-light: #1f2937;
+            --text: #f8fafc;
+            --muted: #cbd5e1;
+            --accent: #60a5fa;
+            --border: rgba(255,255,255,0.08);
+        }
+
         body {
             margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5; /* couleur d'origine conservée */
+            background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+            color: var(--text);
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,37 +29,43 @@
         }
 
         .container {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.6);
         }
 
         h1 {
             margin-bottom: 10px;
+            font-size: 2.5rem;
         }
 
         p {
             margin-bottom: 30px;
-            color: #555;
+            color: var(--muted);
         }
 
         .buttons a {
             text-decoration: none;
             padding: 12px 25px;
             margin: 10px;
-            border-radius: 8px;
+            border-radius: 999px;
+
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background-color: #007BFF; /* ta couleur d'origine */
-            color: white;
+
+            background: rgba(96,165,250,0.15);
+            border: 1px solid rgba(96,165,250,0.4);
+            color: var(--text);
+
             transition: 0.2s;
             font-size: 16px;
         }
 
         .buttons a:hover {
-            background-color: #0056b3; /* hover d'origine */
+            background: rgba(96,165,250,0.3);
         }
 
         .flag {
@@ -55,6 +73,7 @@
         }
     </style>
 </head>
+
 <body>
 
 <div class="container">
@@ -65,7 +84,7 @@
         <a href="cvfr.html">
             <span class="flag">🇫🇷</span> Français
         </a>
-        <a href="cv.html">
+        <a href="cveng.html">
             <span class="flag">🇬🇧</span> English
         </a>
     </div>
